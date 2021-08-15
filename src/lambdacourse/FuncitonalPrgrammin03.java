@@ -36,6 +36,8 @@ public class FuncitonalPrgrammin03 {
         checkLengthToBeLessThanTwelve(l);
         System.out.println();
         checkInitials(l);
+        System.out.println();
+        checkLastChar(l);
 
 
     }
@@ -117,8 +119,16 @@ public class FuncitonalPrgrammin03 {
         //true
     }
     //9) Create a method to check if the initial of any element is not ‘X’
+//    Returns whether no elements of this stream match the provided condition
     public static void checkInitials(List<String> l) {
         boolean result = l.stream().noneMatch(t->t.startsWith("X"));
+        System.out.println(result);
+    }
+
+    //10) Create a method to check if at least one of the elements ending with “R”
+//    Returns whether any elements of this stream match the provided condition
+    public static void checkLastChar(List<String> l) {
+       boolean result = l.stream().anyMatch(t->t.endsWith("R"));
         System.out.println(result);
     }
 
