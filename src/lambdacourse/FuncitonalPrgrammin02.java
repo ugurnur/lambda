@@ -1,7 +1,9 @@
 package lambdacourse;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FuncitonalPrgrammin02 {
 
@@ -37,6 +39,12 @@ public class FuncitonalPrgrammin02 {
         productOfCubeSutinctEvens (l);
         System.out.println();
         getMaxElement (l);
+        System.out.println();
+        getMinElements (l);
+        System.out.println();
+        getMinGreaterThanSevenEven(l);
+        System.out.println();
+        getHalfOfDistinctElReversed (l);
 
     }
     //1)Create a method to print the list elements on the console in the same line with a space between two consecutive
@@ -96,8 +104,37 @@ public class FuncitonalPrgrammin02 {
 
         System.out.println("The max element is  " + maxEL);
         //The max element is  15
-
     }
+
+    // 9) Create a method to find the minimum value from the list elements
+
+    public static void getMinElements (List<Integer> l) {
+
+        Integer minEL = l.stream().reduce(Integer.MAX_VALUE, Math ::min);
+        System.out.println("The min element is  " + minEL);
+        //The min element is  2
+    }
+
+    //10)Create a method to find the minimum value which is greater than 7 and even from the list
+
+    public static void getMinGreaterThanSevenEven(List<Integer> l) {
+
+        Integer minEl=l.stream().distinct().filter(t->t>7).filter(Utils::checkToBeEven).reduce(Integer.MAX_VALUE, Math::min);
+
+        System.out.println("1)The min element is  " + minEl);
+        //1)The min element is  12
+    }
+
+    //11)Create a method to find the half of the elements which are distinct and greater than 5 in reverse in the list.
+    public static void getHalfOfDistinctElReversed (List<Integer> l) {
+
+        List<Double> resultList =	l.stream().distinct().filter(t->t>5).map(Utils::getHalf).sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+
+        System.out.println("Half of the elements list :  " + resultList);
+        //Half of the elements list :  [7.5, 6.5, 6.0, 4.5]
+    }
+
+
 
 }
 

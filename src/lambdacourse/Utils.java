@@ -26,6 +26,9 @@ public class Utils {
     public static Integer getCube (int x) {
         return x*x*x;
     }
+    public static Double getHalf (int x) {
+        return x/2.0;
+    }
 
 
 }
