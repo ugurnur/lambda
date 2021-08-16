@@ -46,6 +46,8 @@ public class FuncitonalPrgrammin02 {
         System.out.println();
         getHalfOfDistinctElReversed (l);
 
+        System.out.println("deneme");
+
     }
     //1)Create a method to print the list elements on the console in the same line with a space between two consecutive
     // elements.(Method Reference)
@@ -171,6 +173,7 @@ public class FuncitonalPrgrammin02 {
         System.out.println("Half of the elements list :  " + resultList);
         //Half of the elements list :  [7.5, 6.5, 6.0, 4.5]
     }
+
 
 
 
