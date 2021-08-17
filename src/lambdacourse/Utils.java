@@ -29,7 +29,15 @@ public class Utils {
     public static Double getHalf (int x) {
         return x/2.0;
     }
+    public static Integer getSumOfDigits (int x){
+        int sum = 0;
 
+        while (x!=0){
+            sum = sum + x%10;
+            x = x/10;
+        }
+        return sum;
+    }
 
 }
 
